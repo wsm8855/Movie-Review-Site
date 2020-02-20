@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Classifier - Enter a review</title>
+</head>
+<body style="text-align: center;">
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+<h2>Enter your review.</h2>
+<form style="padding-top: 1em;" action="{% url 'enter_review' %}" method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% endbuttons %}
+</form>
+
+<p style="color: red;">{{ message }}</p>
+
+</body>
+</html>

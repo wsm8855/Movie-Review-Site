@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Classifier - Results</title>
+</head>
+<body>
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+<div style="text-align: center;">
+<p>The classifier thinks your review is:</p>
+<h3><strong>{{ result }}</strong> with <strong>{{ prob }}</strong>% certainty</h3>
+    <p><a href="{% url 'enter_review' %}">Enter another review</a></p>
+    <h5>The words used to base the classifier's decision were (in no particular order):</h5>
+    {% for word in words %}
+        {{ word }}
+        <br>
+    {% endfor %}
+</div>
+
+</body>
+</html>
